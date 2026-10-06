@@ -90,12 +90,13 @@ function App() {
           align="center"
           gutterBottom
           sx={{
-            backgroundColor: 'gray',
+            backgroundColor: 'red',
             textAlign: 'center',
-            color: 'white',
+            color: 'blue',
             padding: '20px',
             margin: '20px 0 40px 0',
-            borderRadius: '4px'
+            borderRadius: '4px',
+            fontFamily: 'aptos'
           }}
         >
           Tasky
@@ -117,6 +118,7 @@ function App() {
               title={task.title}
               description={task.description}
               deadline={task.deadline}
+              rating={task.rating}
               done={task.done}
               key={task.id}
               markDone={() => doneHandler(index)}

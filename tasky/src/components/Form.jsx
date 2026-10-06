@@ -1,6 +1,8 @@
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import Rating from '@mui/material/Rating';
+import Typography from '@mui/material/Typography';
 
 const AddTaskForm = (props) => {
 
@@ -47,6 +49,20 @@ const AddTaskForm = (props) => {
             </div>
 
             <div>
+                <Typography component="legend" sx={{ m: 1 }}>
+                    Priority
+                </Typography>
+                <Rating
+                    name="rating"
+                    defaultValue={0}
+                    sx={{ m: 1 }}
+                    onChange={(event, newValue) =>
+                        props.change({ target: { name: 'rating', value: newValue } })
+                    }
+                />
+            </div>
+
+            <div>
                 <Button
                     type="submit"
                     variant="contained"
@@ -61,8 +77,6 @@ const AddTaskForm = (props) => {
                 </Button>
             </div>
         </Box>
-
-
     )
 };
 
